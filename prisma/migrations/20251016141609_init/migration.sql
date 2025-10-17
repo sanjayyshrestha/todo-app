@@ -1,0 +1,15 @@
+-- CreateEnum
+CREATE TYPE "PRIORITY" AS ENUM ('LOW', 'MEDIUM', 'HIGH');
+
+-- CreateTable
+CREATE TABLE "Task" (
+    "id" TEXT NOT NULL,
+    "title" TEXT NOT NULL,
+    "description" TEXT NOT NULL,
+    "dueDate" TEXT NOT NULL,
+    "priotity" "PRIORITY" NOT NULL DEFAULT 'MEDIUM',
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "Task_pkey" PRIMARY KEY ("id")
+);
