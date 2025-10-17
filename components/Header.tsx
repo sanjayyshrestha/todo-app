@@ -21,7 +21,7 @@ type NavItem = {
 
 const Header: React.FC = () => {
   const navItems: NavItem[] = [
-    { name: 'Dashboard', href: '/dashboard' },
+    { name: 'Dashboard', href: '/' },
     { name: 'Add/Edit Task', href: '/add-edit-task' },
     { name: 'Task Analytics', href: '/task-analytics' },
     { name: 'Settings', href: '/settings' },
