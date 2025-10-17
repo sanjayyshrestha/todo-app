@@ -7,6 +7,7 @@ import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { addTask, editTask, getTask, deleteTask } from "@/actions/task.action";
 import { DeleteAlertDialog } from "./DeleteAlertDialog";
+import toast from "react-hot-toast";
 
 type Tasks = Awaited<ReturnType<typeof getTask>>;
 export type Task = Tasks[number];
@@ -36,6 +37,7 @@ const [deletingTaskId, setDeletingTaskId] = useState<string | null>(null);
       formData.append("priority", taskData.priority);
       await addTask(formData);
       setShowOpenDialog(false);
+      toast.success('Task added successfully')
     } catch (error) {
       console.error("Error in submit:", error);
     } finally {
@@ -54,6 +56,7 @@ const [deletingTaskId, setDeletingTaskId] = useState<string | null>(null);
       formData.append("dueDate", taskData.dueDate);
       formData.append("priority", taskData.priority);
       await editTask(formData);
+      toast.success('Task edited successfully')
       setShowOpenDialog(false);
       setSelectedTask(null);
       setTaskData({ title: "", description: "", dueDate: "", priority: "LOW" });
@@ -69,6 +72,7 @@ const [deletingTaskId, setDeletingTaskId] = useState<string | null>(null);
     try {
       setDeletingTaskId(taskId);
       await deleteTask(taskId);
+      toast.success('Task deleted successfully successfully')
     } catch (error) {
       console.error("Error deleting task:", error);
     } finally {
