@@ -7,7 +7,7 @@ CREATE TABLE "Task" (
     "title" TEXT NOT NULL,
     "description" TEXT NOT NULL,
     "dueDate" TEXT NOT NULL,
-    "priotity" "PRIORITY" NOT NULL DEFAULT 'MEDIUM',
+    "priority" "PRIORITY" NOT NULL DEFAULT 'MEDIUM',
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
