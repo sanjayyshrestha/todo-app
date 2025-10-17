@@ -72,7 +72,7 @@ const [deletingTaskId, setDeletingTaskId] = useState<string | null>(null);
     try {
       setDeletingTaskId(taskId);
       await deleteTask(taskId);
-      toast.success('Task deleted successfully successfully')
+      toast.success('Task deleted successfully')
     } catch (error) {
       console.error("Error deleting task:", error);
     } finally {
